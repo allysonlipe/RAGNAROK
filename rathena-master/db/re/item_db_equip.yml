@@ -84000,13 +84000,13 @@ Body:
     Name: Beginner Mark
     Type: Armor
     View: 1348
-    Slots: 1
     Locations:
-      Head_Top: true
+      Costume_Head_Top: true
     ArmorLevel: 1
     EquipLevelMax: 99
     Refineable: true
     Trade:
+      Override: 100
       NoDrop: true
       NoTrade: true
       NoSell: true
@@ -84017,6 +84017,9 @@ Body:
     Script: |
       bonus2 bDropAddClass,Class_All,10;
       bonus2 bExpAddClass,Class_All,10;
+      skill "AL_TELEPORT",2;
+      skill "MC_OVERCHARGE",10;
+      skill "RG_COMPULSION",10;
   - Id: 19263
     AegisName: General_Helmet_
     Name: General's Helm

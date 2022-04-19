@@ -44868,9 +44868,8 @@ Body:
     Type: Usable
     Buy: 10
     Weight: 100
-    Classes:
-      All: false
     Trade:
+      Override: 100
       NoDrop: true
       NoTrade: true
       NoSell: true
@@ -44883,6 +44882,7 @@ Body:
       getitem 12610,1;
       getitem 12265,5;
       getitem 22979,5;
+      getitem 14545,5;
   - Id: 22812
     AegisName: Sealed_Dracula_Scroll
     Name: Sealed Dracula Scroll

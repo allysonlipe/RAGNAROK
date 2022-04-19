@@ -11420,6 +11420,7 @@ Body:
     Element: Weapon
     SplashArea: 2
     CastTime: 250
+    AfterCastActDelay: 500
     Duration2:
       - Level: 1
         Time: 20000
@@ -11427,7 +11428,6 @@ Body:
         Time: 5000
       - Level: 3
         Time: 120000
-    Cooldown: 500
     FixedCastTime: 250
     Requires:
       SpCost:
