@@ -57337,24 +57337,37 @@ Body:
     Script: |
       .@r = getrefine();
       bonus bSPDrainValue,2;
-      if (.@r%3==0 && .@r>=3) {
-        bonus bBaseAtk,40*.@r/3;
-        bonus bMatk,40*.@r/3;
+      if (.@r>=3) {
+       bonus bBaseAtk,40;
+       bonus bMatk,40;
       }
       if (.@r>=6) {
         bonus2 bAddSize,Size_Medium,10;
         bonus2 bMagicAddSize,Size_Medium,10;
         autobonus "{ bonus bNoSizeFix; }",2,5000;
+        bonus bBaseAtk,40;
+        bonus bMatk,40;
       }
       if (.@r>=9) {
         bonus2 bAddSize,Size_Medium,20;
         bonus2 bMagicAddSize,Size_Medium,20;
-       // bonus bBaseAtk,40;
-        //bonus bMatk,40;
+        bonus bBaseAtk,40;
+        bonus bMatk,40;
       }
       if (.@r>=12) {
         bonus bNoSizeFix;
+        bonus bBaseAtk,40;
+        bonus bMatk,40;
       }
+      if (.@r>=15) {
+        bonus bBaseAtk,40;
+        bonus bMatk,40;
+      }
+      if (.@r>=18) {
+        bonus bBaseAtk,40;
+       bonus bMatk,40;
+      }
+      
   - Id: 13050
     AegisName: P_Dagger1
     Name: Eden Dagger I
@@ -84049,9 +84062,9 @@ Body:
       }
       if (.@r>10) {
          bonus bCritAtkRate,15;
+         bonus bFixedCast,-100*(min((.@r-10),15)/1);
       }
-      .@val = max(min(.@r-15,5),0);
-      bonus bFixedCast,-.@val*100;
+      
   - Id: 19264
     AegisName: GoldFish_Hat
     Name: Gold Fish Head Hat
@@ -140417,6 +140430,51 @@ Body:
          skill "DC_FORTUNEKISS",getskilllv("BA_POEMBRAGI");
          skill "BA_POEMBRAGI",getskilllv("DC_FORTUNEKISS");
       }
+  - Id: 410025
+    AegisName: Magic_Heir_J
+    Name: Magic_Heir_J
+    Type: Armor
+    View: 1996
+    Buy: 20
+    Weight: 300
+    Defense: 10
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus bBaseAtk,Baselevel;
+      bonus bMatk,Baselevel;
+      bonus bMdef,5;
+      bonus bHPGainValue,150;
+      bonus bLongHPGainValue,150;
+      bonus bMagicHPGainValue,150;
+      bonus bSPGainValue,15;
+      bonus bLongSPGainValue,15;
+      bonus bMagicSPGainValue,15;
+  - Id: 410026
+    AegisName: Magic_Heir_J_
+    Name: Magic_Heir_J_
+    Type: Armor
+    View: 1996
+    Buy: 20
+    Weight: 300
+    Defense: 10
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Script: |
+      bonus bBaseAtk,Baselevel;
+      bonus bMatk,Baselevel;
+      bonus bMdef,5;
+      bonus bHPGainValue,150;
+      bonus bLongHPGainValue,150;
+      bonus bMagicHPGainValue,150;
+      bonus bSPGainValue,15;
+      bonus bLongSPGainValue,15;
+      bonus bMagicSPGainValue,15;
   - Id: 410027
     AegisName: aegis_410027
     Name: Wonder Egg Basket
@@ -149329,12 +149387,12 @@ Body:
       bonus bMatk,6*.@r;
       if (.@r>=10) {
          skill "PR_LEXAETERNA",1;
-         autobonus2 "{ bonus bAspdRate,40; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
+         autobonus "{ bonus bAspdRate,40; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
       }
       else if (.@r>=9)
-         autobonus2 "{ bonus bAspdRate,20; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
+         autobonus "{ bonus bAspdRate,20; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
       else if (.@r>=7)
-         autobonus2 "{ bonus bAspdRate,10; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
+         autobonus "{ bonus bAspdRate,10; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
   - Id: 480045
     AegisName: Guardian_Soul
     Name: Guardian of Soul
