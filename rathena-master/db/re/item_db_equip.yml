@@ -84020,7 +84020,6 @@ Body:
     Locations:
       Costume_Head_Top: true
     ArmorLevel: 1
-    EquipLevelMax: 99
     Refineable: true
     Trade:
       Override: 100
@@ -84037,6 +84036,7 @@ Body:
       skill "AL_TELEPORT",2;
       skill "MC_OVERCHARGE",10;
       skill "RG_COMPULSION",10;
+      skill "WZ_ESTIMATION",1;
   - Id: 19263
     AegisName: General_Helmet_
     Name: General's Helm
